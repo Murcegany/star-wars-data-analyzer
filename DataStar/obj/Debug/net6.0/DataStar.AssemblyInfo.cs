@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataStar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcdbc4fef2e40856587a0f628dc28155e10d1892")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b29c2ff78fc88a9227692a8717a7b1bed72e6c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataStar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataStar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
