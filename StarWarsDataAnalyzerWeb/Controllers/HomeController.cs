@@ -1,31 +1,36 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using StarWarsDataAnalyzerWeb.Models;
+using StarWarsDataAnalyzerWeb.Services;
+using System.Threading.Tasks;
 
-namespace StarWarsDataAnalyzerWeb.Controllers;
-
-public class HomeController : Controller
+namespace StarWarsDataAnalyzerWeb.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly ILogger<HomeController> _logger;
+        private readonly SwapiService _swapiService;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(ILogger<HomeController> logger, SwapiService swapiService)
+        {
+            _logger = logger;
+            _swapiService = swapiService;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public async Task<IActionResult> Index()
+        {
+            var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
+            return View(planetResponse.Results);
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
+        }
     }
 }

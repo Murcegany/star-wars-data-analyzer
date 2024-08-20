@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/star-wars-data-analyzer/DataStar/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj": {}
+    "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj": {}
   },
   "projects": {
-    "/workspaces/star-wars-data-analyzer/DataStar/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj": {
+    "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/star-wars-data-analyzer/DataStar/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj",
+        "projectUniqueName": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj",
         "projectName": "StarWarsDataAnalyzerWeb",
-        "projectPath": "/workspaces/star-wars-data-analyzer/DataStar/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj",
+        "projectPath": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/StarWarsDataAnalyzerWeb.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/star-wars-data-analyzer/DataStar/StarWarsDataAnalyzerWeb/obj/",
+        "outputPath": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"

@@ -1,38 +1,29 @@
-﻿@model IEnumerable<SwapiService.Planet>
+﻿@model IEnumerable<StarWarsDataAnalyzerWeb.Services.SwapiService.Planet>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Star Wars Planets</title>
-    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>Star Wars Planets</h1>
-    </header>
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Climate</th>
-                    <th>Terrain</th>
-                    <th>Population</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var planet in Model)
-                {
-                    <tr>
-                        <td>@planet.Name</td>
-                        <td>@planet.Climate</td>
-                        <td>@planet.Terrain</td>
-                        <td>@planet.Population</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </main>
-</body>
-</html>
+@{
+    ViewData["Title"] = "Planets";
+}
+
+<h1>Planets</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Climate</th>
+            <th>Terrain</th>
+            <th>Population</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var planet in Model)
+        {
+            <tr>
+                <td>@planet.Name</td>
+                <td>@planet.Climate</td>
+                <td>@planet.Terrain</td>
+                <td>@planet.Population</td>
+            </tr>
+        }
+    </tbody>
+</table>
