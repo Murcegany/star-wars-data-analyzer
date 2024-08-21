@@ -32,3 +32,5 @@
 /workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/Debug/net8.0/StarWarsDataAnalyzerWeb.pdb
 /workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/Debug/net8.0/StarWarsDataAnalyzerWeb.genruntimeconfig.cache
 /workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/Debug/net8.0/ref/StarWarsDataAnalyzerWeb.dll
+/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/bin/Debug/net8.0/package-lock.json
+/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/bin/Debug/net8.0/package.json

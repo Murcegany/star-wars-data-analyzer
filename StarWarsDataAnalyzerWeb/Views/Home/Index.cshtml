@@ -1,32 +1,77 @@
 ﻿@model IEnumerable<StarWarsDataAnalyzerWeb.ViewModels.PlanetViewModel>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Climate</th>
-            <th>Terrain</th>
-            <th>Population</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model != null && Model.Any())
-        {
-            foreach (var planet in Model)
-            {
-                <tr>
-                    <td>@planet.Name</td>
-                    <td>@planet.Climate</td>
-                    <td>@planet.Terrain</td>
-                    <td>@planet.Population</td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4">No data available</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Data Analyzer</title>
+    <link rel="stylesheet" href="~/css/styles.css"> <!-- Link para o seu CSS -->
+</head>
+<body>
+    <header class="header">
+        <h1>Star Wars Data Analyzer</h1>
+        <nav>
+            <button id="showData" class="btn">Mostrar Dados Brutos</button>
+            <button id="showDashboard" class="btn">Mostrar Dashboard</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de Dados Brutos -->
+        <section id="dataSection" class="section">
+            <h2>Dados Brutos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Climate</th>
+                        <th>Terrain</th>
+                        <th>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var planet in Model)
+                        {
+                            <tr>
+                                <td>@planet.Name</td>
+                                <td>@planet.Climate</td>
+                                <td>@planet.Terrain</td>
+                                <td>@planet.Population</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">No data available</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seção do Dashboard -->
+        <section id="dashboardSection" class="section" style="display: none;">
+            <h2>Dashboard</h2>
+            <div class="chart-container">
+                <!-- Adicione gráficos complexos aqui -->
+                <div id="chart1" class="chart"></div>
+                <div id="chart2" class="chart"></div>
+                <div id="chart3" class="chart"></div>
+                <div id="chart4" class="chart"></div>
+                <div id="chart5" class="chart"></div>
+                <div id="chart6" class="chart"></div>
+                <div id="chart7" class="chart"></div>
+                <div id="chart8" class="chart"></div>
+                <div id="chart9" class="chart"></div>
+                <div id="chart10" class="chart"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="~/js/scripts.js"></script> 
+</body>
+</html>

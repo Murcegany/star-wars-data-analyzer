@@ -58,44 +58,7 @@ namespace StarWarsDataAnalyzerWeb.Controllers
             ViewBag.AveragePopulationByClimate = averagePopulationByClimate;
             ViewBag.AveragePopulationByTerrain = averagePopulationByTerrain;
 
-            return View(planetViewModel); // Ensure you pass a non-null model to the view
-        }
-
-        public async Task<IActionResult> Dashboard()
-        {
-            var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
-
-            var viewModel = new DashboardViewModel
-            {
-                PlanetNames = planetResponse.Results.Select(p => p.Name).ToList(),
-                PlanetPopulations = planetResponse.Results.Select(p => int.TryParse(p.Population, out var population) ? population : 0).ToList(),
-                Climates = planetResponse.Results.GroupBy(p => p.Climate).ToDictionary(g => g.Key, g => g.Count()),
-                Terrains = planetResponse.Results.GroupBy(p => p.Terrain).ToDictionary(g => g.Key, g => g.Count()),
-                Top5Planets = planetResponse.Results
-                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out var population) && population > 0)
-                    .OrderByDescending(p => int.Parse(p.Population))
-                    .Take(5)
-                    .Select(p => p.Name)
-                    .ToList(),
-                Top5Populations = planetResponse.Results
-                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out var population) && population > 0)
-                    .OrderByDescending(p => int.Parse(p.Population))
-                    .Take(5)
-                    .Select(p => int.Parse(p.Population))
-                    .ToList(),
-                AveragePopulationByClimate = planetResponse.Results
-                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out _))
-                    .GroupBy(p => p.Climate)
-                    .Select(g => (Climate: g.Key, AveragePopulation: g.Average(p => int.Parse(p.Population))))
-                    .ToList(),
-                AveragePopulationByTerrain = planetResponse.Results
-                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out _))
-                    .GroupBy(p => p.Terrain)
-                    .Select(g => (Terrain: g.Key, AveragePopulation: g.Average(p => int.Parse(p.Population))))
-                    .ToList()
-            };
-
-            return View(viewModel);
+            return View(planetViewModel); // Pass the model for both the table and the dashboard
         }
 
         public IActionResult Privacy()

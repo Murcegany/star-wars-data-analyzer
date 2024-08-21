@@ -13,12 +13,40 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/css/styles.css",
+      "PackagePath": "staticwebassets/css/styles.css"
+    },
+    {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/fonts/Starjedi.ttf",
+      "PackagePath": "staticwebassets/fonts/Starjedi.ttf"
+    },
+    {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/images/sample003.jpg",
+      "PackagePath": "staticwebassets/images/sample003.jpg"
+    },
+    {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/images/star-wars-1680799242.jpg",
+      "PackagePath": "staticwebassets/images/star-wars-1680799242.jpg"
+    },
+    {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/images/star-wars-backgrounds-14_856985d9.jpeg",
+      "PackagePath": "staticwebassets/images/star-wars-backgrounds-14_856985d9.jpeg"
+    },
+    {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/images/star_wars_infinity.jpg",
+      "PackagePath": "staticwebassets/images/star_wars_infinity.jpg"
+    },
+    {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/chart.js",
       "PackagePath": "staticwebassets/js/chart.js"
+    },
+    {
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/script.js",
+      "PackagePath": "staticwebassets/js/script.js"
     },
     {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/site.js",
