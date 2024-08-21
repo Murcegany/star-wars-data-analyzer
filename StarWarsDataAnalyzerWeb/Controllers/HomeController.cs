@@ -20,8 +20,16 @@ namespace StarWarsDataAnalyzerWeb.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // Fetch data from SwapiService
             var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
+            
+            if (planetResponse?.Results == null)
+            {
+                _logger.LogError("Failed to retrieve planet data.");
+                return View("Error"); // Or handle the error as needed
+            }
 
+            // Map data to ViewModel
             var planetViewModel = planetResponse.Results.Select(p => new PlanetViewModel
             {
                 Name = p.Name,
@@ -33,8 +41,14 @@ namespace StarWarsDataAnalyzerWeb.Controllers
             // Prepare metrics for the dashboard
             var planetNames = planetViewModel.Select(p => p.Name).ToArray();
             var planetPopulations = planetViewModel.Select(p => p.Population).ToArray();
-            var climates = planetViewModel.GroupBy(p => p.Climate).ToDictionary(g => g.Key, g => g.Count());
-            var terrains = planetViewModel.GroupBy(p => p.Terrain).ToDictionary(g => g.Key, g => g.Count());
+
+            var climates = planetViewModel
+                .GroupBy(p => p.Climate)
+                .ToDictionary(g => g.Key, g => g.Count());
+
+            var terrains = planetViewModel
+                .GroupBy(p => p.Terrain)
+                .ToDictionary(g => g.Key, g => g.Count());
 
             var top5Planets = planetViewModel
                 .Where(p => p.Population > 0)
@@ -44,12 +58,21 @@ namespace StarWarsDataAnalyzerWeb.Controllers
 
             var averagePopulationByClimate = planetViewModel
                 .GroupBy(p => p.Climate)
-                .Select(g => new { Climate = g.Key, AveragePopulation = g.Average(p => p.Population) });
+                .Select(g => new 
+                { 
+                    Climate = g.Key, 
+                    AveragePopulation = g.Average(p => p.Population) 
+                });
 
             var averagePopulationByTerrain = planetViewModel
                 .GroupBy(p => p.Terrain)
-                .Select(g => new { Terrain = g.Key, AveragePopulation = g.Average(p => p.Population) });
+                .Select(g => new 
+                { 
+                    Terrain = g.Key, 
+                    AveragePopulation = g.Average(p => p.Population) 
+                });
 
+            // Store metrics in ViewBag for use in the view
             ViewBag.PlanetNames = planetNames;
             ViewBag.PlanetPopulations = planetPopulations;
             ViewBag.Climates = climates;
