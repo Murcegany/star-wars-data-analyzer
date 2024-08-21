@@ -1,17 +1,82 @@
+@model StarWarsDataAnalyzerWeb.ViewModels.DashboardViewModel
+
 @{
     ViewData["Title"] = "Dashboard";
 }
 
-<h1>Dashboard</h1>
+<h1 class="text-center my-4">Star Wars Data Dashboard</h1>
 
 <div class="container">
+    <!-- 1. Gráfico de Barras: Distribuição Populacional por Planeta -->
+    <h2>Population Distribution by Planet</h2>
     <canvas id="planetChart" width="400" height="200"></canvas>
+
+    <!-- 2. Gráfico de Pizza: Distribuição de Climas dos Planetas -->
+    <h2>Climate Distribution</h2>
+    <canvas id="climateChart" width="400" height="200"></canvas>
+
+    <!-- 3. Gráfico de Pizza: Distribuição de Tipos de Terrenos -->
+    <h2>Terrain Distribution</h2>
+    <canvas id="terrainChart" width="400" height="200"></canvas>
+
+    <!-- 4. Gráfico de Barras: Top 5 Planetas Mais Populosos -->
+    <h2>Top 5 Most Populated Planets</h2>
+    <canvas id="top5PlanetsChart" width="400" height="200"></canvas>
+
+    <!-- 5. Gráfico de Dispersão: Correlação entre Clima e População -->
+    <h2>Correlation between Climate and Population</h2>
+    <canvas id="climatePopulationChart" width="400" height="200"></canvas>
+
+    <!-- 6. Gráfico de Dispersão: Correlação entre Terreno e População -->
+    <h2>Correlation between Terrain and Population</h2>
+    <canvas id="terrainPopulationChart" width="400" height="200"></canvas>
+
+    <!-- 7. Indicador: Planetas Desabitados ou com População Desconhecida -->
+    <h2>Uninhabited or Unknown Population Planets</h2>
+    <ul>
+        @foreach (var planet in Model.PlanetNames.Zip(Model.PlanetPopulations, (name, population) => new { Name = name, Population = population }))
+        {
+            if (planet.Population == 0)
+            {
+                <li>@planet.Name</li>
+            }
+        }
+    </ul>
+
+    <!-- 8. Gráfico de Barras: Planetas com Maior e Menor População -->
+    <h2>Extremes in Population</h2>
+    <canvas id="extremePopulationChart" width="400" height="200"></canvas>
+
+    <!-- 9. Indicador: Média de População por Clima -->
+    <h2>Average Population by Climate</h2>
+    <ul>
+        @foreach (var item in Model.AveragePopulationByClimate)
+        {
+            <li>@item.Climate: @item.AveragePopulation</li>
+        }
+    </ul>
+
+    <!-- 10. Indicador: Média de População por Terreno -->
+    <h2>Average Population by Terrain</h2>
+    <ul>
+        @foreach (var item in Model.AveragePopulationByTerrain)
+        {
+            <li>@item.Terrain: @item.AveragePopulation</li>
+        }
+    </ul>
 </div>
 
-<script id="planetNames" type="application/json">
-    @Html.Raw(Json.Serialize(ViewBag.PlanetNames))
-</script>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var planetNames = @Html.Raw(Json.Serialize(Model.PlanetNames));
+        var planetPopulations = @Html.Raw(Json.Serialize(Model.PlanetPopulations));
+        var climates = @Html.Raw(Json.Serialize(Model.Climates.Keys));
+        var climateCounts = @Html.Raw(Json.Serialize(Model.Climates.Values));
+        var terrains = @Html.Raw(Json.Serialize(Model.Terrains.Keys));
+        var terrainCounts = @Html.Raw(Json.Serialize(Model.Terrains.Values));
+        var top5Planets = @Html.Raw(Json.Serialize(Model.Top5Planets));
+        var top5Populations = @Html.Raw(Json.Serialize(Model.Top5Populations));
 
-<script id="planetPopulations" type="application/json">
-    @Html.Raw(Json.Serialize(ViewBag.PlanetPopulations))
-</script>
+    </script>
+}

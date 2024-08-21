@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StarWarsDataAnalyzerWeb.Models;
 using StarWarsDataAnalyzerWeb.Services;
+using StarWarsDataAnalyzerWeb.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,22 +21,81 @@ namespace StarWarsDataAnalyzerWeb.Controllers
         public async Task<IActionResult> Index()
         {
             var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
-            return View(planetResponse.Results);
+
+            var planetViewModel = planetResponse.Results.Select(p => new PlanetViewModel
+            {
+                Name = p.Name,
+                Climate = p.Climate,
+                Terrain = p.Terrain,
+                Population = int.TryParse(p.Population, out var population) ? population : 0
+            }).ToList();
+
+            // Prepare metrics for the dashboard
+            var planetNames = planetViewModel.Select(p => p.Name).ToArray();
+            var planetPopulations = planetViewModel.Select(p => p.Population).ToArray();
+            var climates = planetViewModel.GroupBy(p => p.Climate).ToDictionary(g => g.Key, g => g.Count());
+            var terrains = planetViewModel.GroupBy(p => p.Terrain).ToDictionary(g => g.Key, g => g.Count());
+
+            var top5Planets = planetViewModel
+                .Where(p => p.Population > 0)
+                .OrderByDescending(p => p.Population)
+                .Take(5)
+                .Select(p => new { p.Name, p.Population });
+
+            var averagePopulationByClimate = planetViewModel
+                .GroupBy(p => p.Climate)
+                .Select(g => new { Climate = g.Key, AveragePopulation = g.Average(p => p.Population) });
+
+            var averagePopulationByTerrain = planetViewModel
+                .GroupBy(p => p.Terrain)
+                .Select(g => new { Terrain = g.Key, AveragePopulation = g.Average(p => p.Population) });
+
+            ViewBag.PlanetNames = planetNames;
+            ViewBag.PlanetPopulations = planetPopulations;
+            ViewBag.Climates = climates;
+            ViewBag.Terrains = terrains;
+            ViewBag.Top5Planets = top5Planets;
+            ViewBag.AveragePopulationByClimate = averagePopulationByClimate;
+            ViewBag.AveragePopulationByTerrain = averagePopulationByTerrain;
+
+            return View(planetViewModel); // Ensure you pass a non-null model to the view
         }
 
         public async Task<IActionResult> Dashboard()
         {
             var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
 
-            // Preparar os dados para o gráfico
-            var planetNames = planetResponse.Results.Select(p => p.Name).ToArray();
-            var planetPopulations = planetResponse.Results.Select(p => 
-                int.TryParse(p.Population, out var population) ? population : 0).ToArray();
+            var viewModel = new DashboardViewModel
+            {
+                PlanetNames = planetResponse.Results.Select(p => p.Name).ToList(),
+                PlanetPopulations = planetResponse.Results.Select(p => int.TryParse(p.Population, out var population) ? population : 0).ToList(),
+                Climates = planetResponse.Results.GroupBy(p => p.Climate).ToDictionary(g => g.Key, g => g.Count()),
+                Terrains = planetResponse.Results.GroupBy(p => p.Terrain).ToDictionary(g => g.Key, g => g.Count()),
+                Top5Planets = planetResponse.Results
+                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out var population) && population > 0)
+                    .OrderByDescending(p => int.Parse(p.Population))
+                    .Take(5)
+                    .Select(p => p.Name)
+                    .ToList(),
+                Top5Populations = planetResponse.Results
+                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out var population) && population > 0)
+                    .OrderByDescending(p => int.Parse(p.Population))
+                    .Take(5)
+                    .Select(p => int.Parse(p.Population))
+                    .ToList(),
+                AveragePopulationByClimate = planetResponse.Results
+                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out _))
+                    .GroupBy(p => p.Climate)
+                    .Select(g => (Climate: g.Key, AveragePopulation: g.Average(p => int.Parse(p.Population))))
+                    .ToList(),
+                AveragePopulationByTerrain = planetResponse.Results
+                    .Where(p => p.Population != "unknown" && int.TryParse(p.Population, out _))
+                    .GroupBy(p => p.Terrain)
+                    .Select(g => (Terrain: g.Key, AveragePopulation: g.Average(p => int.Parse(p.Population))))
+                    .ToList()
+            };
 
-            ViewBag.PlanetNames = planetNames;
-            ViewBag.PlanetPopulations = planetPopulations;
-
-            return View();
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
