@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D7nn1jnfXjODjQj3+Cks3gwFlnk4yLzZi6p0lqNhyEE=",
+  "Hash": "gfYHyXPjZK8Jaq0N+vKrVpeipdeWE+aoO6Ey+BPrkkM=",
   "Source": "StarWarsDataAnalyzerWeb",
   "BasePath": "_content/StarWarsDataAnalyzerWeb",
   "Mode": "Default",
@@ -167,25 +167,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/star-wars-backgrounds-14_856985d9.jpeg"
-    },
-    {
-      "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/chart.js",
-      "SourceId": "StarWarsDataAnalyzerWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/",
-      "BasePath": "_content/StarWarsDataAnalyzerWeb",
-      "RelativePath": "js/chart.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/chart.js"
     },
     {
       "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/scripts.js",

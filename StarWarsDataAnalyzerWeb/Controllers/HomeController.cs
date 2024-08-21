@@ -94,5 +94,19 @@ namespace StarWarsDataAnalyzerWeb.Controllers
         {
             return View(new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
         }
+
+        // New API endpoint for fetching planet data
+        [HttpGet("api/planets")]
+        public async Task<IActionResult> GetPlanets()
+        {
+            var planetResponse = await _swapiService.GetDataAsync<SwapiService.PlanetResponse>("planets");
+            
+            if (planetResponse?.Results == null)
+            {
+                return NotFound(); // Return 404 if no data is found
+            }
+
+            return Ok(planetResponse.Results); // Return the data as JSON
+        }
     }
 }

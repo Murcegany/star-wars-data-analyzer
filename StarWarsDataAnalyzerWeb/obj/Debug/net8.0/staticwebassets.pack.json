@@ -33,10 +33,6 @@
       "PackagePath": "staticwebassets/images/star_wars_infinity.jpg"
     },
     {
-      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/chart.js",
-      "PackagePath": "staticwebassets/js/chart.js"
-    },
-    {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/scripts.js",
       "PackagePath": "staticwebassets/js/scripts.js"
     },

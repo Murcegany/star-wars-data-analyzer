@@ -22,7 +22,7 @@ body {
     background: url('/images/star-wars-backgrounds-14_856985d9.jpeg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
-    color: #f0f0f0; /* Melhor contraste */
+    color: #ffd700;
 }
 
 /* Navegação */
@@ -34,7 +34,7 @@ nav {
 /* Botões */
 .btn, .btn-link.nav-link, .form-control, .form-check-input {
     border: 1px solid #ffd700;
-    background-color: transparent;
+    background-color: #000000;
     color: #ffd700; /* Cor dos botões */
     font-family: 'StarJedi', sans-serif;
     margin: 0.5rem;
