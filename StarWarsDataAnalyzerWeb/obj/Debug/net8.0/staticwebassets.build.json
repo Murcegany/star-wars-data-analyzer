@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nuhsc+Q+J5XRnTgY2qC0scZBZmAMNQusMWKqJRo/tFM=",
+  "Hash": "6RtE4ONRw4vaC/etagE6aIc16IY2N2+U0bdCyRfzMJw=",
   "Source": "StarWarsDataAnalyzerWeb",
   "BasePath": "_content/StarWarsDataAnalyzerWeb",
   "Mode": "Default",
@@ -205,25 +205,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/script.js"
-    },
-    {
-      "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/site.js",
-      "SourceId": "StarWarsDataAnalyzerWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/",
-      "BasePath": "_content/StarWarsDataAnalyzerWeb",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

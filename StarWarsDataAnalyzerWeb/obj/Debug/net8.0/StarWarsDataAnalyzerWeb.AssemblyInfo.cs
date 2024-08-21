@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StarWarsDataAnalyzerWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1910739e0b80aecd8724e7dcf207e63081769477")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da97d478dbd601efde56a58721586804a51512e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("StarWarsDataAnalyzerWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StarWarsDataAnalyzerWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
