@@ -37,8 +37,8 @@
       "PackagePath": "staticwebassets/js/chart.js"
     },
     {
-      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/script.js",
-      "PackagePath": "staticwebassets/js/script.js"
+      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/scripts.js",
+      "PackagePath": "staticwebassets/js/scripts.js"
     },
     {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/lib/bootstrap/LICENSE",
