@@ -1,20 +1,12 @@
 {
   "Files": [
     {
-      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/Debug/net8.0/scopedcss/projectbundle/StarWarsDataAnalyzerWeb.bundle.scp.css",
-      "PackagePath": "staticwebassets/StarWarsDataAnalyzerWeb.bundle.scp.css"
-    },
-    {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/c",
       "PackagePath": "staticwebassets"
     },
     {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
-    },
-    {
-      "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/css/styles.css",
-      "PackagePath": "staticwebassets/css/styles.css"
     },
     {
       "Id": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/favicon.ico",
