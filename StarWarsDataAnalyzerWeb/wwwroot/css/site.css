@@ -1,3 +1,11 @@
+/* Fonte Star Jedi */
+@font-face {
+    font-family: 'StarJedi';
+    src: url('/fonts/Starjedi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Fonte e Tamanho Base */
 html {
     font-size: 14px;
@@ -13,17 +21,34 @@ html {
 
 /* Estilos Globais do Corpo */
 body {
-    font-family: 'StarWars', sans-serif;
+    font-family: 'StarJedi', sans-serif;
     background: url('/images/star-wars-backgrounds-14_856985d9.jpeg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     color: #f0f0f0; /* Melhor contraste */
+    line-height: 1.6; /* Melhora a legibilidade */
 }
 
 /* Navegação */
 nav {
     margin: 0 auto;
     text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona fundo semi-transparente */
+    border-bottom: 2px solid #ffd700; /* Linha inferior dourada */
+}
+
+nav button {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+nav button:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra ao passar o mouse */
 }
 
 /* Botões */
@@ -31,21 +56,23 @@ nav {
     border: 1px solid #ffd700;
     background-color: transparent;
     color: #ffd700; /* Cor dos botões */
-    font-family: 'StarWars', sans-serif;
+    font-family: 'StarJedi', sans-serif;
     margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
     background-color: rgba(255, 215, 0, 0.2);
     color: #fff;
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+    font-family: 'StarJedi', sans-serif;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
 }
 
@@ -53,31 +80,36 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: #f0f0f0;
     text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover {
-    color: #d0d0d0;
+    color: #ffd700;
     text-decoration: underline;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Tabelas */
 .table {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #000;
     border-color: #ffd700;
     border-radius: 0.5rem;
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra da tabela */
 }
 
 .table th, .table td {
     border-color: #ffd700;
-    padding: 0.75rem;
+    padding: 1rem;
 }
 
 .table thead th {
     background-color: #ffd700;
     color: #000;
+    text-transform: uppercase; /* Transformar texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
 /* Gráficos */
@@ -89,13 +121,15 @@ a:hover {
 }
 
 .chart {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #ffd700;
     border-radius: 0.5rem;
-    flex: 1 1 18%; /* Ajusta o tamanho dos gráficos */
+    flex: 1 1 22%; /* Ajusta o tamanho dos gráficos */
     height: 300px; /* Altura dos gráficos */
     margin: 0.5rem;
     position: relative;
+    overflow: hidden; /* Oculta parte do conteúdo que ultrapassa o contêiner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor dos gráficos */
 }
 
 .chart svg {
@@ -105,9 +139,11 @@ a:hover {
 
 /* Formulários e Controles */
 .form-control, .form-check-input {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     border-color: #ffd700;
     color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 .form-control::placeholder {
@@ -117,10 +153,13 @@ a:hover {
 /* Espaço Principal */
 main {
     margin-top: 80px; /* Espaço para o cabeçalho fixo */
-    padding: 1rem;
+    padding: 2rem; /* Maior padding para mais espaço */
 }
 
 /* Seções */
 .section {
     margin: 2rem 0;
+    padding: 1rem; /* Adiciona padding às seções */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    border-radius: 10px; /* Cantos arredondados */
 }
