@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HvfjS+FveaE8y7Tzy/eCRFufpKETpOEtHwj8u90/gUk=",
+  "Hash": "THuWZf40z3s8vTmW8Y7icyvfLvbFo6wlG+/muC+6iBI=",
   "Source": "StarWarsDataAnalyzerWeb",
   "BasePath": "_content/StarWarsDataAnalyzerWeb",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/obj/Debug/net8.0/scopedcss/projectbundle/StarWarsDataAnalyzerWeb.bundle.scp.css"
     },
     {
+      "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/c",
+      "SourceId": "StarWarsDataAnalyzerWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/",
+      "BasePath": "_content/StarWarsDataAnalyzerWeb",
+      "RelativePath": "c",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/c"
+    },
+    {
       "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/css/site.css",
       "SourceId": "StarWarsDataAnalyzerWeb",
       "SourceType": "Discovered",
@@ -91,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/chart.js",
+      "SourceId": "StarWarsDataAnalyzerWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/",
+      "BasePath": "_content/StarWarsDataAnalyzerWeb",
+      "RelativePath": "js/chart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/chart.js"
     },
     {
       "Identity": "/workspaces/star-wars-data-analyzer/StarWarsDataAnalyzerWeb/wwwroot/js/site.js",

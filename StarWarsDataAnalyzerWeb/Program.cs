@@ -25,6 +25,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
+// Map the default controller route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
